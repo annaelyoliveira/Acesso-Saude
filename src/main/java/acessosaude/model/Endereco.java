@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "enderecos")
+@Table(name = "endereco")
 @Data
 public class Endereco {
     @Id
@@ -13,9 +13,9 @@ public class Endereco {
 
     private String logradouro;
     private String bairro;
-    private String cidade;
-    private String estado;
     private String cep;
 
-
+    @ManyToOne
+    @JoinColumn(name = "cidade_id")
+    private Cidade cidade;
 }

@@ -4,16 +4,22 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "estabelecimentos")
+@Table(name = "unidade")
 @Data
-public class Estabelecimento {
+public class Unidade {
     @Id
     @Column(name = "co_cnes")
     private String coCnes;
 
+    @Column(name = "no_fantasia")
     private String noFantasia;
+
+    @Column(name = "tp_unidade")
     private String tpUnidade;
-    private String turnoAtendimento;
+
+    @ManyToOne
+    @JoinColumn(name = "turno_id")
+    private Turno turno;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")

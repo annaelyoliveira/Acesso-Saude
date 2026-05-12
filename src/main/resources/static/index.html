@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Saúde PB</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Acesso Saúde PB</h1>
+
+    <div class="filtros">
+
+        <input
+                type="text"
+                id="cidade"
+                placeholder="Cidade"
+        >
+
+        <input
+                type="text"
+                id="bairro"
+                placeholder="Bairro"
+        >
+
+        <select id="tipo">
+
+            <option value="">
+                Tipo de Unidade
+            </option>
+
+            <option value="1">
+                POSTO DE SAÚDE
+            </option>
+
+            <option value="2">
+                CENTRO DE SAÚDE / UBS
+            </option>
+
+            <option value="4">
+                POLICLÍNICA
+            </option>
+
+            <option value="5">
+                HOSPITAL GERAL
+            </option>
+
+            <option value="7">
+                HOSPITAL ESPECIALIZADO
+            </option>
+
+            <option value="20">
+                PRONTO ATENDIMENTO
+            </option>
+
+        </select>
+
+        <select id="turno">
+
+            <option value="">
+                Turno
+            </option>
+
+            <option value="1">
+                MANHÃ
+            </option>
+
+            <option value="2">
+                TARDE
+            </option>
+
+            <option value="3">
+                MANHÃ E TARDE
+            </option>
+
+            <option value="4">
+                NOITE
+            </option>
+
+            <option value="5">
+                INTEGRAL
+            </option>
+
+        </select>
+
+        <input
+                type="text"
+                id="nome"
+                placeholder="Nome da Unidade"
+        >
+
+        <button onclick="buscar()">
+            Buscar
+        </button>
+
+    </div>
+
+    <div id="resultado"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

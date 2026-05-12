@@ -9,7 +9,7 @@ import lombok.Data;
 public class Cidade {
     @Id
     @Column(name = "\"CO_IBGE\"")
-    private String coIbge; // Garanta que é String
+    private String coIbge; 
     
     @Column(name = "\"NO_MUNICIPIO\"")
     private String nome;

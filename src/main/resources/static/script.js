@@ -62,27 +62,27 @@ function renderizarCards(unidades) {
                 ${unidade.nomeFantasia ?? "NÃO INFORMADO"}
             </h2>
 
-            <div class="info">
+            <p class="info">
                 <strong>Tipo:</strong>
                 ${unidade.tipoUnidadeDescricao ?? "NÃO INFORMADO"}
-            </div>
+            </p>
 
-            <div class="info">
+            <p class="info">
                 <strong>Turno:</strong>
                 ${unidade.turnoDescricao ?? "NÃO INFORMADO"}
-            </div>
+            </p>
 
-            <div class="info">
+            <p class="info">
                 <strong>Telefone:</strong>
                 ${unidade.telefone ?? "Não informado"}
-            </div>
+            </p>
 
-            <div class="info">
+            <p class="info">
                 <strong>Email:</strong>
                 ${unidade.email ?? "Não informado"}
-            </div>
+            </p>
 
-            <div class="info">
+            <p class="info">
                 <strong>Endereço:</strong>
 
                 ${unidade.endereco?.logradouro ?? ""},
@@ -96,47 +96,76 @@ function renderizarCards(unidades) {
                 -
 
                 ${unidade.endereco?.cidade?.nome ?? ""}
-            </div>
+            </p>
 
             <div class="capacidades">
 
                 <h3>Capacidades</h3>
 
-                <div class="grid-capacidades">
+                <div class="capacidades-grid">
 
                     <div class="capacidade">
                         Centro Cirúrgico:
-                        ${unidade.capacidade?.temCentroCirurgico ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stCentroCirurgico ? "Sim" : "Não"}
                     </div>
 
                     <div class="capacidade">
                         Centro Obstétrico:
-                        ${unidade.capacidade?.temCentroObstetrico ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stCentroObstetrico ? "Sim" : "Não"}
                     </div>
 
                     <div class="capacidade">
                         Centro Neonatal:
-                        ${unidade.capacidade?.temCentroNeonatal ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stCentroNeonatal ? "Sim" : "Não"}
                     </div>
 
                     <div class="capacidade">
                         Atendimento Hospitalar:
-                        ${unidade.capacidade?.temAtendimentoHospitalar ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stAtendHospitalar ? "Sim" : "Não"}
                     </div>
 
                     <div class="capacidade">
                         Serviço Apoio:
-                        ${unidade.capacidade?.temServicoApoio ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stServicoApoio ? "Sim" : "Não"}
                     </div>
 
                     <div class="capacidade">
                         Atendimento Ambulatorial:
-                        ${unidade.capacidade?.temAtendimentoAmbulatorial ? "Sim" : "Não"}
+                        ${unidade.capacidade?.stAtendAmbulatorial ? "Sim" : "Não"}
                     </div>
 
                 </div>
 
             </div>
+
+            <details class="profissionais">
+
+                <summary>
+                    Ver profissionais
+                </summary>
+
+                ${
+            unidade.profissionais &&
+            unidade.profissionais.length > 0
+
+                ?
+
+                unidade.profissionais.map(profissional => `
+
+                        <div class="profissional-item">
+
+                            👨‍⚕️ ${profissional.nome}
+
+                        </div>
+
+                    `).join("")
+
+                :
+
+                `<p>Nenhum profissional encontrado.</p>`
+        }
+
+            </details>
 
         </div>
         `;

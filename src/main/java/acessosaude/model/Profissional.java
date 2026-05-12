@@ -10,11 +10,12 @@ import lombok.Data;
 @Table(name = "tb_profissionais")
 @Data
 public class Profissional {
+
     @Id
     @Column(name = "CO_PROFISSIONAL_SUS")
     private String id;
 
-    @Column(name = "NO_PROFISSIONAL") // Ajustado
+    @Column(name = "NO_PROFISSIONAL")
     private String nome;
 
     @Column(name = "CO_CNS")
